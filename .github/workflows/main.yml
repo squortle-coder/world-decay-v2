@@ -9,8 +9,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - run: mvn package -q
-        working-directory: chunk-destruction
+      - run: unzip chunk-destruction.zip && cd chunk-destruction && mvn package -q
       - uses: actions/upload-artifact@v4
         with:
           name: plugin-jar
